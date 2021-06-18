@@ -36,7 +36,7 @@ app.config['SECRET_KEY'] = 'super-secret'
 jwt = JWT(app, authenticate, identity)
 
 
-@app.route("/")
+@app.route("/v1/auth/login")
 @jwt_required()
 def protected():
     return f'{current_identity}'
